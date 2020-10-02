@@ -43,5 +43,15 @@ body {
   transform-origin: 100%;
   transform: rotate(90deg);
   transition: all 0.05s;
-  transition-timing-function: cubic-bezier(0, 2.79, 0.51, 1.07);
+  transition-timing-function: cubic-bezier(0, 2.76, 0.52, 0.96);
+}
+
+.clock-center {
+  height: 15px;
+  width: 15px;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  right: 142px;
+  bottom: 139px;
 }
