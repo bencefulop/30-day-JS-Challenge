@@ -44,6 +44,7 @@ body {
   transform: rotate(90deg);
   transition: all 0.05s;
   transition-timing-function: cubic-bezier(0, 2.76, 0.52, 0.96);
+  border-radius: 5px;
 }
 
 .clock-center {
