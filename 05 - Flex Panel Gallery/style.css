@@ -82,4 +82,13 @@ body {
 
 .panel.open {
   font-size: 40px;
+  flex: 5;
+}
+
+.panel > *:first-child {
+  transform: translateY(-100%);
+}
+
+.panel > *:last-child {
+  transform: translateY(100%);
 }
