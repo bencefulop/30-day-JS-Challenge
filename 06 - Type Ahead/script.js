@@ -9,7 +9,7 @@ fetch(endpoint)
 
 function findMatches(wordToMatch, cities) {
   return cities.filter((place) => {
-    // in regex g stands for global (it'll search everywhere) and i is for case insensitive
+    // g stands for global (it'll search everywhere) and i is for case insensitive
     const regex = new RegExp(wordToMatch, 'gi');
     return place.city.match(regex) || place.state.match(regex);
   });
