@@ -50,10 +50,10 @@ console.log(uniqueComment);
 // delete the comment with the ID of 823423
 
 // splice() method either adds or removes items from an array
-// TO REMOVE, specify the index, and the number of elements you want to remove.
+// TO REMOVE, specify the index, and the number of elements you want to remove. 👇
 // for example comments.splice(2,1) => will remove one item at index 2
 
-// TO ADD, complete the function with elements you want to add.
+// TO ADD, complete the function with elements you want to add. 👇
 // for example comments.splice(1,2, "wow", "amazing") -> will remove 2 elements at index one and add "wow" and "amazing".
 
 const index = comments.findIndex((comment) => {
