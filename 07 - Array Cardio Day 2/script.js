@@ -19,14 +19,20 @@ const comments = [
 // Array.prototype.some() // is at least one person 19 or older?
 const isAdult = people.some((person) => {
   const currentYear = new Date().getFullYear();
-  return currentYear - person.year >= 19 ? true : false;
+  return currentYear - person.year >= 19;
   // same with multi-line if statement 👇
   // if (currentYear - person.year >= 19) {
   //   return true;
   // }
 });
-console.log(isAdult);
+console.log('Is there at least one adult?: ' + isAdult);
 // Array.prototype.every() // is everyone 19 or older?
+const allAdults = people.every((person) => {
+  const currentYear = new Date().getFullYear();
+  return currentYear - person.year >= 19;
+});
+
+console.log('Is everyone an adult?: ' + allAdults);
 
 // Array.prototype.find()
 // Find is like filter, but instead returns just the one you are looking for
