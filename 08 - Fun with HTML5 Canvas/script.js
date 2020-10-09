@@ -1,7 +1,14 @@
 const canvas = document.getElementById('draw');
 
-function clickedCanvas() {
-  console.log('hello');
-}
+const ctx = canvas.getContext('2D');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-canvas.addEventListener('click', clickedCanvas);
+ctx.strokeStyle = '#dde938';
+ctx.lineJoin = 'round';
+ctx.lineCap = 'round';
+
+let isDrawing = false;
+
+let lastX = 0;
+let lastY = 0;
