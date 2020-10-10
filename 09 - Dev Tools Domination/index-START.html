@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Console Tricks!</title>
-    <link rel="shortcut icon" href="❤#" />
+    <link rel="shortcut icon" href="#" />
   </head>
   <body>
     <p onClick="makeGreen()">×BREAK×DOWN×</p>
@@ -21,23 +21,26 @@
       }
 
       // Regular
-
+      console.log('Hi mate!');
       // Interpolated
-
+      console.log('Hello, %s', '🍑');
       // Styled
-
+      console.log('Hello, %c %s', 'font-size: 20px', '🍑');
       // warning!
-
+      console.warn('Watch out');
       // Error :|
-
-      // Info
+      console.error('Uh oh!');
+      // Info - blue icon got removed from chrome in 2018
+      console.info('JavaScript is fun as hell!');
 
       // Testing
-
+      console.assert(1 === 2, 'Not correct!');
       // clearing
-
+      console.clear();
       // Viewing DOM Elements
-
+      const p = document.querySelector('p');
+      console.log(p);
+      console.dir(p); // => opens up a dropdown with info,  possible methods etc...
       // Grouping together
 
       // counting
