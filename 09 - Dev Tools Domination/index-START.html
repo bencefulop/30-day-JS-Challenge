@@ -11,7 +11,7 @@
     <script>
       const dogs = [
         { name: 'Snickers', age: 2 },
-        { name: 'hugo', age: 8 },
+        { name: 'Hugo', age: 8 },
       ];
 
       function makeGreen() {
@@ -42,9 +42,14 @@
       console.log(p);
       console.dir(p); // => opens up a dropdown with info,  possible methods etc...
       // Grouping together
-
+      dogs.forEach((dog) => {
+        console.groupCollapsed(dog.name);
+        console.log(`This is ${dog.name}`);
+        console.log(`${dog.name} id ${dog.age} old`);
+        console.groupEnd(dog.name);
+      });
       // counting
-
+      console.count('Hugo');
       // timing
     </script>
   </body>
