@@ -1,5 +1,3 @@
-// checkbox.checked = !checkbox.checked;
-
 const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
 
 let lastChecked;
@@ -15,7 +13,7 @@ function handleCheck(e) {
       }
 
       if (inBetween) {
-        checkbox.checked = !checkbox.checked;
+        checkbox.checked = true;
       }
     });
   }
