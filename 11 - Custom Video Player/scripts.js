@@ -14,4 +14,24 @@ function togglePlay() {
   }
 }
 
+function updateButton() {
+  toggle.textContent = this.paused ? '►' : '| |';
+
+  // this was my solution 👇
+  // if (toggle.textContent == '►') {
+  //   toggle.textContent = '||';
+  // } else {
+  //   toggle.textContent = '►';
+  // }
+  // console.log(toggle.textContent);
+}
+
+function skip() {
+  video.currentTime += parseInt(this.dataset.skip);
+}
+
 video.addEventListener('click', togglePlay);
+video.addEventListener('play', updateButton);
+video.addEventListener('pause', updateButton);
+toggle.addEventListener('click', togglePlay);
+skipButtons.forEach((skipButton) => skipButton.addEventListener('click', skip));
