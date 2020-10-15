@@ -5,6 +5,7 @@ const progressBar = player.querySelector('.progress__filled');
 const toggle = player.querySelector('.toggle');
 const skipButtons = player.querySelectorAll('[data-skip]');
 const ranges = player.querySelectorAll('.player__slider');
+const fullScreenButton = player.querySelector('.fullscreen-toggle');
 
 function togglePlay() {
   if (video.paused) {
@@ -12,6 +13,12 @@ function togglePlay() {
   } else {
     video.pause();
   }
+}
+
+function toggleFullScreen() {
+  // plays video on fullscreen however with standard chrome controls
+  // could preserve custom controls if function toggled a CSS class to set the height/width to 100%
+  video.webkitRequestFullscreen();
 }
 
 function updateButton() {
@@ -58,6 +65,7 @@ progress.addEventListener('mouseup', () => (mousedown = false));
 toggle.addEventListener('click', togglePlay);
 
 skipButtons.forEach((skipButton) => skipButton.addEventListener('click', skip));
+fullScreenButton.addEventListener('click', toggleFullScreen);
 
 ranges.forEach((range) => range.addEventListener('change', handleChangeUpdate));
 ranges.forEach((range) =>
