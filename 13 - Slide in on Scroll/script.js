@@ -20,10 +20,11 @@ function debounce(func, wait = 20, immediate = true) {
 const pictures = document.querySelectorAll('.slide-in');
 
 function checkSlide(e) {
-  // console.log(window.scrollY);
+  // determine when we've scrolled halfway throigh the picture
   pictures.forEach((picture) => {
-    const slideInAt = window.scrollY + window.innerHeight;
-    console.log(slideInAt);
+    const slideInAt = window.scrollY + window.innerHeight - picture.height / 2;
+    // determine the bottom of image
+    const imageBottom = picture.offsetTop + picture.height;
   });
 }
 
