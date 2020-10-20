@@ -48,17 +48,18 @@
       console.log(team2);
       team2[3] = 'George Washington';
       console.log(players, team2);
-
       // calling slice on an array will make a copy of it. This way if you change the new array the old one doesn't change
 
-      // one way
-
-      // or create a new array and concat the old one in
+      const team3 = [].concat(players);
+      console.log(team3);
 
       // or use the new ES6 Spread
+      const team4 = [...players];
+      team4[3] = 'Frank the tank 🔫';
+      console.log(team4);
 
       // now when we update it, the original one isn't changed
-
+      const team5 = Array.from(players); // <-- this is exactly the same too
       // The same thing goes for objects, let's say we have a person object
 
       // with Objects
