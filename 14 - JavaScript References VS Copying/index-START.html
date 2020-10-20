@@ -64,17 +64,41 @@
 
       // with Objects
       const person = {
-        name: 'Wes Bos',
+        name: 'Marian',
         age: 80,
+        hobbies: {
+          cycling: 'advanced',
+          playingTheDrums: 'beginner',
+        },
       };
 
       // and think we make a copy:
+      const pirate = person;
+      pirate.age = '🏴‍☠️';
+      console.log(person);
+
+      // this is again a reference and changes the original too
 
       // how do we take a copy instead?
+      const person2 = Object.assign({}, person, { age: 34 });
+      console.log(person2);
+      // Or use the object ...spread
 
-      // We will hopefully soon see the object ...spread
+      const person3 = { ...person };
+      person3.name = 'Pete the Pirate';
+      console.log(person3);
 
+      person.name = 'TEST';
+
+      console.log(person, person3);
       // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+
+      const bence = Object.assign({}, person);
+      bence.hobbies.playingTheDrums = 'god level';
+
+      // this changes the hobbies/drums value on both objects. This is because assign is only 1 level deep.
+
+      console.log(person, bence);
     </script>
   </body>
 </html>
