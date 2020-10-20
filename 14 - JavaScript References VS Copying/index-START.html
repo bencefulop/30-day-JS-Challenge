@@ -14,10 +14,24 @@
       age = 200;
       console.log(age, age2);
 
+      let name = 'Bence';
+      let name2 = name;
+      console.log(name, name2);
+      name = 'Benito';
+      console.log(name, name2);
+
       // Let's say we have an array
       const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
 
       // and we want to make a copy of it.
+      const team = players;
+
+      console.log(players, team);
+      team[3] = 'Bence';
+      console.log(players, team);
+      // output is "Wes", "Sarah", "Ryan", "Bence" for both.
+      // this is because team isn't the array it's just a reference to it.
+      // When we update team it calls back to the original array
 
       // You might think we can just do something like this:
 
@@ -30,6 +44,12 @@
       // Why? It's because that is an array reference, not an array copy. They both point to the same array!
 
       // So, how do we fix this? We take a copy instead!
+      const team2 = players.slice();
+      console.log(team2);
+      team2[3] = 'George Washington';
+      console.log(players, team2);
+
+      // calling slice on an array will make a copy of it. This way if you change the new array the old one doesn't change
 
       // one way
 
