@@ -27,8 +27,10 @@ function paintToCanvas() {
   return setInterval(() => {
     ctx.drawImage(video, 0, 0, width, height);
 
-    const pixels = ctx.getImageData(0, 0, width, height);
-  }, 16);
+    let pixels = ctx.getImageData(0, 0, width, height);
+    pixels = redEffect(pixels);
+    ctx.putImageData(pixels, 0, 0);
+  }, 90);
 }
 
 function takePhoto() {
@@ -42,9 +44,16 @@ function takePhoto() {
   link.href = data;
   link.setAttribute('download', 'goodlooking');
   link.innerHTML = `<img src="${data}" alt="snapshot" />`;
-  // link.innerText = 'download';
-  // link.textContent = 'Download Image';
   strip.insertBefore(link, strip.firstChild);
+}
+
+function redEffect(pixels) {
+  for (let i = 0; i < pixels.data.length; i += 4) {
+    pixels.data[i + 0] = pixels.data[i + 0] + 100;
+    pixels.data[i + 1] = pixels.data[i + 1] - 50;
+    pixels.data[i + 2] = pixels.data[i + 2] * 0.5;
+  }
+  return pixels;
 }
 
 getVideo();
